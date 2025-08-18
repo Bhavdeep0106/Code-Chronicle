@@ -1,23 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter as FontSans } from "next/font/google"
 import "./globals.css";
-import SideConfig from "../config/sit";
-import NavBar from "./components/NavBar";
-import { ThemeProvider } from "./components/Theme-provider";
+import { cn } from "@/lib/utils";
+import SiteConfig from "@/config/site";
+import NavBar from "@/components/NavBar";
+import { ThemeProvider } from "@/components/theme-provider"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = FontSans({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
-  title: SideConfig.title,
-  description: SideConfig.description,
+  title: SiteConfig.title,
+  description: SiteConfig.description,
 };
 
 export default function RootLayout({
@@ -26,17 +22,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="scroll-p-20 scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <NavBar/>
+          <NavBar />
           {children}
         </ThemeProvider>
       </body>
