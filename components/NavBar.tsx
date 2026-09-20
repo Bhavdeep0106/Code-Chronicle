@@ -62,7 +62,6 @@ const NavBar = () => {
                 <li><Link href={"/"}>Home</Link></li>
                 <li><Link href={"/about"}>About</Link></li>
                 <li><Link href={"/blog"}>Blog</Link></li>
-                <li><Link href={"/contact"}>Contact</Link></li>
                 <li className="buttons px-4 space-x-2">
                     <Link href={"/login"} className={buttonVariants({ variant: "outline" })}>Login</Link>
                     <Link href={"/login"} className={buttonVariants({ variant: "outline" })}>Sign Up</Link>
