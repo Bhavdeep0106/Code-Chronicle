@@ -2,6 +2,7 @@
 title: DSA vs. Development - Understanding the Difference and Importance
 slug: dsa-vs-development
 description: Explore the differences between Data Structures and Algorithms (DSA) and Software Development, and understand their roles in building efficient and effective applications.
+category: ai-tools-developing
 ---
 
 

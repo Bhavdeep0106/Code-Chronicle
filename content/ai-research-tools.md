@@ -1,8 +1,9 @@
 ---
 title: AI Research Tools - A Practical Guide
 slug: ai-research-tools
-description: Explore powerful AI research tools for discovering information, analyzing sources, conducting literature reviews, and turning research into useful outputs.
+description: Explore powerful AI research tools...
 image:
+category: ai-tools-office
 ---
 
 AI is changing the way people research information. Instead of relying only on traditional search engines, researchers can now use specialized AI tools to discover sources, analyze collections of documents, explore academic literature, and turn research findings into structured outputs.

@@ -1,73 +1,31 @@
-// import SampleBlogs from "@/config/sampleblogs";
-import React from "react"; 
-import { Button, buttonVariants } from "@/components/ui/button";
-import fs, { readFileSync } from "fs";
-import matter from "gray-matter";
-import Link from "next/link";
-import { Metadata } from "next";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import CategoryCard from "@/components/CategoryCard";
+import { blogCategories } from "@/lib/categories";
 
-interface BlogType {
-  slug: string; 
-  title: string;
-  description: string; 
-  imageUrl?: string;
-
-};
-
-const dirContent = fs.readdirSync("content", "utf-8")
-console.log(dirContent)
-
-const blogs: BlogType[] = dirContent.map(file=>{ 
-  const fileContent = readFileSync(`content/${file}`, "utf-8");
-  const {data} = matter(fileContent)
-  const value: BlogType = {
-    slug: data.slug,
-    title: data.title,
-    description: data.description,
-    imageUrl: data?.imageUrl
-  }
-  return value
-})
-
-console.log(blogs)
- 
-
-const BlogList = () => {
+export default function BlogPage() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center my-2">Our Blogs</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogs.map((blog: BlogType, index: number) =>  (
-          <div
-            key={index}
-            className= "shadow-lg rounded-lg overflow-hidden"
-          >
-            <img
-              className="w-fit h-fit object-cover object-top"
-              src={blog.imageUrl?blog.imageUrl: "/CODE.png"}
-              alt={blog.title}
+    <main>
+      <MaxWidthWrapper className="py-12">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            Lets Learn
+          </h1>
+
+          <p className="mt-4 text-muted-foreground">
+            All the articles on  AI tools, tech, development, gaming,
+            anime, and more.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {blogCategories.map((category) => (
+            <CategoryCard
+              key={category.slug}
+              category={category}
             />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
-              <p className="mb-4">{blog.description}</p>
-              <Link
-                href={`/blogpost/${blog.slug}`}
-                className={buttonVariants({ variant:"default" })}
-              >
-                Read More
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+          ))}
+        </div>
+      </MaxWidthWrapper>
+    </main>
   );
-};
-
-export const metadata: Metadata = {
-  title: 'Blogs - CODE-CHRONICLE',
-  description: 'A comprehensive blog for coders of all levels, from beginners to advanced. Explore tutorials, tips, and insights on a wide range of programming languages and technologies. Stay up-to-date with the latest trends in software development, learn best practices, and enhance your coding skills with in-depth articles and guides.',
 }
- 
-
-export default BlogList;
