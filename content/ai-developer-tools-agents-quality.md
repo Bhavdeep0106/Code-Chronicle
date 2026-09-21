@@ -1,7 +1,7 @@
 ---
 title: Agents, Kotlin, and the Cost of Speed
 slug: ai-developer-tools-agents-quality
-description: "A three-day trend scan covering AI coding agents, open frameworks, and software quality.
+description: A three-day trend scan covering AI coding agents, open frameworks, and software quality.
 category: ai-tools-developing
 ---
 

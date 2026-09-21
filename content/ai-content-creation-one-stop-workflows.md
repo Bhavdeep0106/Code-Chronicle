@@ -1,12 +1,12 @@
 ---
-title:  From Prompt to Finished Video
+title: From Prompt to Finished Video
 slug: ai-content-creation-one-stop-workflows
 description: A current look at the AI video and content-creation workflow trend.
 category: ai-tools-content-creation
 ---
 
 
-**Trend window:**a September 19–21, 2026  
+**Trend window:** September 19–21, 2026  
 **Signal:** Creation tools are bundling ideation, generation, editing, and publishing.
 
 ## The big movement
