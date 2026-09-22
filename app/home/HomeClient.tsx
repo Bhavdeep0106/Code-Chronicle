@@ -19,8 +19,8 @@ export default function HomeClient({
     if (!el.current) return;
 
     const typed = new Typed(el.current, {
-      strings: ["<i>Tailwind</i> CSS.", "&amp; React", "Typescript"],
-      typeSpeed: 50,
+      strings: ["AI Tools", "&amp; Latest AI Tech", "AI for Coding","Gaming","Anime and Manga"],
+      typeSpeed: 40,
     });
 
     return () => {
@@ -34,12 +34,12 @@ export default function HomeClient({
       <section className="container px-4 py-10 mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center">
         <div className="w-full text-center lg:text-left lg:w-1/2 lg:-mt-8">
           <h1 className="text-3xl leading-snug text-gray-800 dark:text-gray-200 md:text-4xl">
-            A{" "}
+            {" "}
             <span className="font-semibold">
-              tech blog
+              My blog
             </span>{" "}
-            for community{" "}
-            <br className="hidden lg:block" /> components using{" "}
+            for all info{" "}
+            <br className="hidden lg:block" /> Regarding{" "}
             <span className="font-semibold underline decoration-primary">
               <span ref={el} />
             </span>
